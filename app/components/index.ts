@@ -5,6 +5,10 @@ import Search from "@/app/components/Navbar/Search";
 import UserMenu from "@/app/components/Navbar/UserMenu";
 import Avatar from "@/app/components/Avatar";
 import MenuItem from "@/app/components/Navbar/MenuItem";
+import Modal from "@/app/components/Modals/Modal";
+import Button from "@/app/components/Button";
+import RegisterModal from "@/app/components/Modals/RegisterModal";
+import ClientOnly from "@/app/components/ClientOnly";
 
 export {
     Logo,
@@ -13,5 +17,9 @@ export {
     Search,
     UserMenu,
     Avatar,
-    MenuItem
+    MenuItem,
+    Modal,
+    Button,
+    RegisterModal,
+    ClientOnly
 }
