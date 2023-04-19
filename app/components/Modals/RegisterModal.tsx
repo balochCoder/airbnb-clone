@@ -10,6 +10,7 @@ import {Button, Modal} from "@/app/components";
 import Heading from "@/app/components/Heading";
 import Input from "@/app/components/Inputs/Input";
 import toast from "react-hot-toast";
+import {signIn} from "next-auth/react";
 
 const RegisterModal = () => {
     const registerModal = useRegisterModal();
@@ -43,17 +44,21 @@ const RegisterModal = () => {
     const bodyContent = (
         <div className="flex flex-col gap-4">
             <Heading title="Welcome to Airbnb" subtitle="Create an account"/>
-            <Input type="email" id="email" label="Email Address" register={register} errors={errors} disabled={isLoading} required/>
-            <Input type="text" id="name" label="Full Name" register={register} errors={errors} disabled={isLoading} required/>
-            <Input type="password" id="password" label="Password" register={register} errors={errors} disabled={isLoading} required/>
+            <Input type="email" id="email" label="Email Address" register={register} errors={errors}
+                   disabled={isLoading} required/>
+            <Input type="text" id="name" label="Full Name" register={register} errors={errors} disabled={isLoading}
+                   required/>
+            <Input type="password" id="password" label="Password" register={register} errors={errors}
+                   disabled={isLoading} required/>
         </div>
     );
 
     const footerContent = (
         <div className="flex flex-col gap-4 mt-3">
             <hr/>
-            <Button outline label="Continue with Google" onClick={()=>{}} icon={FcGoogle}/>
-            <Button outline label="Continue with GitHub" onClick={()=>{}} icon={AiFillGithub}/>
+            <Button outline label="Continue with Google" onClick={() => {
+            }} icon={FcGoogle}/>
+            <Button outline label="Continue with GitHub" onClick={() => signIn('github')} icon={AiFillGithub}/>
 
             <div className="text-neutral-500 text-center mt-4 font-light">
                 <div className="justify-center flex flex-row items-center gap-2">
