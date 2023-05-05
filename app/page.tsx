@@ -4,6 +4,8 @@ import getListings, {IListingsParams} from "@/app/actions/getListings";
 import Listing from "@/app/components/Listings/Listing";
 import getCurrentUser from "@/app/actions/getCurrentUser";
 
+export const dynamic = 'force-dynamic'
+
 interface HomeProps {
     searchParams: IListingsParams
 }
